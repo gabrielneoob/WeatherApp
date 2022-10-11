@@ -11,13 +11,12 @@ let weather = {
     const { description, icon } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
-    const iconurl = `http://openweathermap.org/img/w/${icon}.png"`;
 
     //display weather
     document.querySelector('.city').innerText = `${name}`;
     document.querySelector('h1').innerText = `${temp}°C`;
     document.querySelector('.description').innerText = description;
-    document.querySelector('.icon').src = iconurl;
+    document.querySelector('.icon').src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
     document.querySelector('.humnidity').innerText = `Umidade: ${humidity}%`;
     document.querySelector('.wind').innerText = `Velocidade do vento: ${speed}km/h`
 
