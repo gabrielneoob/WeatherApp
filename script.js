@@ -3,7 +3,8 @@ let weather = {
   fetchWeather: function (city) {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=pt_br&appid=${this.apikey}`)
       .then((respnse) => respnse.json())
-      .then((data) => this.displayWeather(data));
+      .then((data) => this.displayWeather(data))
+      .catch((e) => alert("Lugar não encontrado"));
   },
   displayWeather: function (data) {
     const { name } = data;
@@ -47,4 +48,4 @@ searchBar.addEventListener('keyup', (e) => {
 })
 
 
-weather.fetchWeather('Brasil');
+weather.fetchWeather('Rio de Janeiro');
