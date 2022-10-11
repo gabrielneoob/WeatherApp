@@ -21,7 +21,7 @@ let weather = {
     document.querySelector('.wind').innerText = `Velocidade do vento: ${speed}km/h`
 
 
-    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name.toLowerCase().replace('\ \g', '')}')`;
+    document.body.style.backgroundImage = `url('https://source.unsplash.com/2560x1080/?${name.toLowerCase().replace('\ \g', '')}')`;
   },
 
 }
