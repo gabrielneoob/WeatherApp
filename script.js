@@ -21,7 +21,7 @@ let weather = {
     document.querySelector('.wind').innerText = `Velocidade do vento: ${speed}km/h`
 
 
-    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name}')`;
+    document.body.style.backgroundImage = `url('https://source.unsplash.com/1600x900/?${name.toLowerCase().replace('\ \g', '')}')`;
   },
 
 }
@@ -35,7 +35,16 @@ searchBtn.addEventListener('click', ((e) => {
   const city = searchBar.value;
   console.log(city)
   weather.fetchWeather(searchBar.value);
-}))
+}));
+
+searchBar.addEventListener('keyup', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    const city = searchBar.value;
+    console.log(city)
+    weather.fetchWeather(searchBar.value);
+  }
+})
 
 
 weather.fetchWeather('Brasil');
